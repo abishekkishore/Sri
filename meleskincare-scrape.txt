@@ -1,0 +1,8 @@
+if (//meta[contains(@sourceurl,'/www.meleskincare.com/us/en/products/')]) then ((//div[contains(@class,'title')]//div[contains(@class,'component-content')]//h1)[1]) else ()
+img (//div[contains(@class,'imageGallery-view')]//picture//img/@src)[1]
+manu if ((//div[contains(@class,'logo')]//img/@title)[1]) then ((//div[contains(@class,'logo')]//img/@title)[1]) else 'MELÉ'
+size //a[contains(@class,'productVariantList-link productVariantList-parent-product is-active')]
+sku for $i in //a[contains(@class,'productVariantList-link productVariantList-parent-product is-active')] return substring-before(substring-after(tokenize(//script[contains(.,'sku')],'productSize":"')[contains(.,$i)],'sku":"'),'"')
+external for $i in //a[contains(@class,'productVariantList-link productVariantList-parent-product is-active')] return substring-before(substring-after(tokenize(//script[contains(.,'sku')],'productSize":"')[contains(.,$i)],'EAN":"'),'"'), //meta[contains(@itemprop,'gtin12')]/@content
+PD //div[contains(@class,'product-desc')] | //ul[contains(@class,'accordion-container')]
+Bullet //div[contains(@class,'product-desc')]//li | //ul[contains(@class,'accordion-container')]//li
