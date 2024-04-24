@@ -1,0 +1,10 @@
+//h1[contains(@class,'productView-title')]
+PD //article[contains(@itemprop,'description')]
+img //section[contains(@class,'productView-images')]//figure/@data-zoom-image
+manu if (//meta[contains(@property,'og:site_name')]/@content) then ((//meta[contains(@property,'og:site_name')]/@content)) else 'Austin Bazaar'
+`brand if (//meta[contains(@property,'og:site_name')]/@content) then ((//meta[contains(@property,'og:site_name')]/@content)) else 'Austin Bazaar'
+sku //div[contains(@class,'prdctDtl')][contains(.,'SKU')]//dd
+offering if (//meta[contains(@itemprop,'availability')]/@content[contains(.,'In')]) then ('In Stock') else ('Out of Stock')
+external substring-before(substring-after(//script[contains(.,'upc')],'upc":"'),'"'), substring-before(substring-after(//script[contains(.,'gtin')],'gtin":"'),'"')
+PD //article[contains(@itemprop,'description')]//ul//li[contains(.,'Details')] | //article[contains(@itemprop,'description')]//ul//li[contains(.,'Specification')] | //div[contains(@id,'tab-description')] | //div[contains(@id,'tab-warranty')]
+Bullet //div[contains(@id,'tab-description')]//li | //div[contains(@id,'tab-warranty')]//li
