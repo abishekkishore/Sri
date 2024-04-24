@@ -1,0 +1,5 @@
+if (//meta[contains(@sourceurl,'/www.snickers.com/products/')]) then (//h1[contains(@class,'pdp-hero__product-name text-color-E')]) else ()
+sku (//div[contains(@data-jskey,'sku')])[1]
+size //ul[contains(@class,'pdp-hero__size-list')]//li
+manu if ((//meta[contains(@property,'og:site_name')]/@content)[1]) then ((//meta[contains(@property,'og:site_name')]/@content)[1]) else 'SNICKERS®'
+PD //div[contains(@class,'pdp-hero__description')] | //span[contains(@class,'pdp-hero__nutrition-menu')] | //section[contains(@class,'pdp-nutrition')]
